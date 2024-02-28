@@ -1,0 +1,698 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Finalized Model Summary"
+      ],
+      "metadata": {
+        "id": "kzFhPc7lcaKb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 795
+        },
+        "id": "agJyyqEHmYgm",
+        "outputId": "2677772b-701c-4ba5-fa5a-164a2acdcf52"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Optimization terminated successfully.\n",
+            "         Current function value: 0.536475\n",
+            "         Iterations 6\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "<class 'statsmodels.iolib.summary.Summary'>\n",
+              "\"\"\"\n",
+              "                           Logit Regression Results                           \n",
+              "==============================================================================\n",
+              "Dep. Variable:                      y   No. Observations:                40000\n",
+              "Model:                          Logit   Df Residuals:                    39975\n",
+              "Method:                           MLE   Df Model:                           24\n",
+              "Date:                Sun, 25 Feb 2024   Pseudo R-squ.:                  0.2260\n",
+              "Time:                        15:30:28   Log-Likelihood:                -21459.\n",
+              "converged:                       True   LL-Null:                       -27725.\n",
+              "Covariance Type:            nonrobust   LLR p-value:                     0.000\n",
+              "=================================================================================\n",
+              "                    coef    std err          z      P>|z|      [0.025      0.975]\n",
+              "---------------------------------------------------------------------------------\n",
+              "x5_saturday      -1.2065      0.037    -32.949      0.000      -1.278      -1.135\n",
+              "x81_July          1.0958      0.047     23.090      0.000       1.003       1.189\n",
+              "x81_December      1.0294      0.047     21.812      0.000       0.937       1.122\n",
+              "x31_japan         0.9249      0.056     16.540      0.000       0.815       1.035\n",
+              "x81_October       0.9111      0.047     19.516      0.000       0.820       1.003\n",
+              "x5_sunday        -0.8573      0.036    -23.921      0.000      -0.928      -0.787\n",
+              "x31_asia         -0.7595      0.030    -25.522      0.000      -0.818      -0.701\n",
+              "x81_February      0.8253      0.047     17.645      0.000       0.734       0.917\n",
+              "x91               0.7660      0.013     60.549      0.000       0.741       0.791\n",
+              "x81_May           0.7930      0.047     16.837      0.000       0.701       0.885\n",
+              "x5_monday        -0.6696      0.035    -18.935      0.000      -0.739      -0.600\n",
+              "x81_September     0.6814      0.047     14.630      0.000       0.590       0.773\n",
+              "x81_March         0.6835      0.047     14.664      0.000       0.592       0.775\n",
+              "x53              -0.6221      0.012    -50.365      0.000      -0.646      -0.598\n",
+              "x81_November      0.5608      0.047     12.039      0.000       0.470       0.652\n",
+              "x44              -0.5058      0.012    -41.482      0.000      -0.530      -0.482\n",
+              "x81_June          0.4448      0.047      9.537      0.000       0.353       0.536\n",
+              "x12              -0.3938      0.012    -32.788      0.000      -0.417      -0.370\n",
+              "x5_tuesday       -0.3727      0.035    -10.505      0.000      -0.442      -0.303\n",
+              "x81_August        0.4300      0.047      9.162      0.000       0.338       0.522\n",
+              "x81_January       0.3457      0.047      7.373      0.000       0.254       0.438\n",
+              "x62              -0.2882      0.012    -23.503      0.000      -0.312      -0.264\n",
+              "x31_germany      -0.1664      0.029     -5.649      0.000      -0.224      -0.109\n",
+              "x58               0.2107      0.012     17.516      0.000       0.187       0.234\n",
+              "x56               0.2002      0.012     16.356      0.000       0.176       0.224\n",
+              "=================================================================================\n",
+              "\"\"\""
+            ],
+            "text/html": [
+              "<table class=\"simpletable\">\n",
+              "<caption>Logit Regression Results</caption>\n",
+              "<tr>\n",
+              "  <th>Dep. Variable:</th>           <td>y</td>        <th>  No. Observations:  </th>  <td> 40000</td> \n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>Model:</th>                 <td>Logit</td>      <th>  Df Residuals:      </th>  <td> 39975</td> \n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>Method:</th>                 <td>MLE</td>       <th>  Df Model:          </th>  <td>    24</td> \n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>Date:</th>            <td>Sun, 25 Feb 2024</td> <th>  Pseudo R-squ.:     </th>  <td>0.2260</td> \n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>Time:</th>                <td>15:30:28</td>     <th>  Log-Likelihood:    </th> <td> -21459.</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>converged:</th>             <td>True</td>       <th>  LL-Null:           </th> <td> -27725.</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>Covariance Type:</th>     <td>nonrobust</td>    <th>  LLR p-value:       </th>  <td> 0.000</td> \n",
+              "</tr>\n",
+              "</table>\n",
+              "<table class=\"simpletable\">\n",
+              "<tr>\n",
+              "        <td></td>           <th>coef</th>     <th>std err</th>      <th>z</th>      <th>P>|z|</th>  <th>[0.025</th>    <th>0.975]</th>  \n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x5_saturday</th>   <td>   -1.2065</td> <td>    0.037</td> <td>  -32.949</td> <td> 0.000</td> <td>   -1.278</td> <td>   -1.135</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_July</th>      <td>    1.0958</td> <td>    0.047</td> <td>   23.090</td> <td> 0.000</td> <td>    1.003</td> <td>    1.189</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_December</th>  <td>    1.0294</td> <td>    0.047</td> <td>   21.812</td> <td> 0.000</td> <td>    0.937</td> <td>    1.122</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x31_japan</th>     <td>    0.9249</td> <td>    0.056</td> <td>   16.540</td> <td> 0.000</td> <td>    0.815</td> <td>    1.035</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_October</th>   <td>    0.9111</td> <td>    0.047</td> <td>   19.516</td> <td> 0.000</td> <td>    0.820</td> <td>    1.003</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x5_sunday</th>     <td>   -0.8573</td> <td>    0.036</td> <td>  -23.921</td> <td> 0.000</td> <td>   -0.928</td> <td>   -0.787</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x31_asia</th>      <td>   -0.7595</td> <td>    0.030</td> <td>  -25.522</td> <td> 0.000</td> <td>   -0.818</td> <td>   -0.701</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_February</th>  <td>    0.8253</td> <td>    0.047</td> <td>   17.645</td> <td> 0.000</td> <td>    0.734</td> <td>    0.917</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x91</th>           <td>    0.7660</td> <td>    0.013</td> <td>   60.549</td> <td> 0.000</td> <td>    0.741</td> <td>    0.791</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_May</th>       <td>    0.7930</td> <td>    0.047</td> <td>   16.837</td> <td> 0.000</td> <td>    0.701</td> <td>    0.885</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x5_monday</th>     <td>   -0.6696</td> <td>    0.035</td> <td>  -18.935</td> <td> 0.000</td> <td>   -0.739</td> <td>   -0.600</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_September</th> <td>    0.6814</td> <td>    0.047</td> <td>   14.630</td> <td> 0.000</td> <td>    0.590</td> <td>    0.773</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_March</th>     <td>    0.6835</td> <td>    0.047</td> <td>   14.664</td> <td> 0.000</td> <td>    0.592</td> <td>    0.775</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x53</th>           <td>   -0.6221</td> <td>    0.012</td> <td>  -50.365</td> <td> 0.000</td> <td>   -0.646</td> <td>   -0.598</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_November</th>  <td>    0.5608</td> <td>    0.047</td> <td>   12.039</td> <td> 0.000</td> <td>    0.470</td> <td>    0.652</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x44</th>           <td>   -0.5058</td> <td>    0.012</td> <td>  -41.482</td> <td> 0.000</td> <td>   -0.530</td> <td>   -0.482</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_June</th>      <td>    0.4448</td> <td>    0.047</td> <td>    9.537</td> <td> 0.000</td> <td>    0.353</td> <td>    0.536</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x12</th>           <td>   -0.3938</td> <td>    0.012</td> <td>  -32.788</td> <td> 0.000</td> <td>   -0.417</td> <td>   -0.370</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x5_tuesday</th>    <td>   -0.3727</td> <td>    0.035</td> <td>  -10.505</td> <td> 0.000</td> <td>   -0.442</td> <td>   -0.303</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_August</th>    <td>    0.4300</td> <td>    0.047</td> <td>    9.162</td> <td> 0.000</td> <td>    0.338</td> <td>    0.522</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x81_January</th>   <td>    0.3457</td> <td>    0.047</td> <td>    7.373</td> <td> 0.000</td> <td>    0.254</td> <td>    0.438</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x62</th>           <td>   -0.2882</td> <td>    0.012</td> <td>  -23.503</td> <td> 0.000</td> <td>   -0.312</td> <td>   -0.264</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x31_germany</th>   <td>   -0.1664</td> <td>    0.029</td> <td>   -5.649</td> <td> 0.000</td> <td>   -0.224</td> <td>   -0.109</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x58</th>           <td>    0.2107</td> <td>    0.012</td> <td>   17.516</td> <td> 0.000</td> <td>    0.187</td> <td>    0.234</td>\n",
+              "</tr>\n",
+              "<tr>\n",
+              "  <th>x56</th>           <td>    0.2002</td> <td>    0.012</td> <td>   16.356</td> <td> 0.000</td> <td>    0.176</td> <td>    0.224</td>\n",
+              "</tr>\n",
+              "</table>"
+            ],
+            "text/latex": "\\begin{center}\n\\begin{tabular}{lclc}\n\\toprule\n\\textbf{Dep. Variable:}   &        y         & \\textbf{  No. Observations:  } &    40000    \\\\\n\\textbf{Model:}           &      Logit       & \\textbf{  Df Residuals:      } &    39975    \\\\\n\\textbf{Method:}          &       MLE        & \\textbf{  Df Model:          } &       24    \\\\\n\\textbf{Date:}            & Sun, 25 Feb 2024 & \\textbf{  Pseudo R-squ.:     } &   0.2260    \\\\\n\\textbf{Time:}            &     15:30:28     & \\textbf{  Log-Likelihood:    } &   -21459.   \\\\\n\\textbf{converged:}       &       True       & \\textbf{  LL-Null:           } &   -27725.   \\\\\n\\textbf{Covariance Type:} &    nonrobust     & \\textbf{  LLR p-value:       } &    0.000    \\\\\n\\bottomrule\n\\end{tabular}\n\\begin{tabular}{lcccccc}\n                        & \\textbf{coef} & \\textbf{std err} & \\textbf{z} & \\textbf{P$> |$z$|$} & \\textbf{[0.025} & \\textbf{0.975]}  \\\\\n\\midrule\n\\textbf{x5\\_saturday}   &      -1.2065  &        0.037     &   -32.949  &         0.000        &       -1.278    &       -1.135     \\\\\n\\textbf{x81\\_July}      &       1.0958  &        0.047     &    23.090  &         0.000        &        1.003    &        1.189     \\\\\n\\textbf{x81\\_December}  &       1.0294  &        0.047     &    21.812  &         0.000        &        0.937    &        1.122     \\\\\n\\textbf{x31\\_japan}     &       0.9249  &        0.056     &    16.540  &         0.000        &        0.815    &        1.035     \\\\\n\\textbf{x81\\_October}   &       0.9111  &        0.047     &    19.516  &         0.000        &        0.820    &        1.003     \\\\\n\\textbf{x5\\_sunday}     &      -0.8573  &        0.036     &   -23.921  &         0.000        &       -0.928    &       -0.787     \\\\\n\\textbf{x31\\_asia}      &      -0.7595  &        0.030     &   -25.522  &         0.000        &       -0.818    &       -0.701     \\\\\n\\textbf{x81\\_February}  &       0.8253  &        0.047     &    17.645  &         0.000        &        0.734    &        0.917     \\\\\n\\textbf{x91}            &       0.7660  &        0.013     &    60.549  &         0.000        &        0.741    &        0.791     \\\\\n\\textbf{x81\\_May}       &       0.7930  &        0.047     &    16.837  &         0.000        &        0.701    &        0.885     \\\\\n\\textbf{x5\\_monday}     &      -0.6696  &        0.035     &   -18.935  &         0.000        &       -0.739    &       -0.600     \\\\\n\\textbf{x81\\_September} &       0.6814  &        0.047     &    14.630  &         0.000        &        0.590    &        0.773     \\\\\n\\textbf{x81\\_March}     &       0.6835  &        0.047     &    14.664  &         0.000        &        0.592    &        0.775     \\\\\n\\textbf{x53}            &      -0.6221  &        0.012     &   -50.365  &         0.000        &       -0.646    &       -0.598     \\\\\n\\textbf{x81\\_November}  &       0.5608  &        0.047     &    12.039  &         0.000        &        0.470    &        0.652     \\\\\n\\textbf{x44}            &      -0.5058  &        0.012     &   -41.482  &         0.000        &       -0.530    &       -0.482     \\\\\n\\textbf{x81\\_June}      &       0.4448  &        0.047     &     9.537  &         0.000        &        0.353    &        0.536     \\\\\n\\textbf{x12}            &      -0.3938  &        0.012     &   -32.788  &         0.000        &       -0.417    &       -0.370     \\\\\n\\textbf{x5\\_tuesday}    &      -0.3727  &        0.035     &   -10.505  &         0.000        &       -0.442    &       -0.303     \\\\\n\\textbf{x81\\_August}    &       0.4300  &        0.047     &     9.162  &         0.000        &        0.338    &        0.522     \\\\\n\\textbf{x81\\_January}   &       0.3457  &        0.047     &     7.373  &         0.000        &        0.254    &        0.438     \\\\\n\\textbf{x62}            &      -0.2882  &        0.012     &   -23.503  &         0.000        &       -0.312    &       -0.264     \\\\\n\\textbf{x31\\_germany}   &      -0.1664  &        0.029     &    -5.649  &         0.000        &       -0.224    &       -0.109     \\\\\n\\textbf{x58}            &       0.2107  &        0.012     &    17.516  &         0.000        &        0.187    &        0.234     \\\\\n\\textbf{x56}            &       0.2002  &        0.012     &    16.356  &         0.000        &        0.176    &        0.224     \\\\\n\\bottomrule\n\\end{tabular}\n%\\caption{Logit Regression Results}\n\\end{center}"
+          },
+          "metadata": {},
+          "execution_count": 57
+        }
+      ],
+      "source": [
+        "train_and_val = pd.concat([train_imputed_std, val_imputed_std])\n",
+        "all_train = pd.concat([train_and_val, test_imputed_std])\n",
+        "variables = var_reduced['name'].to_list()\n",
+        "final_logit = sm.Logit(all_train['y'], all_train[variables])\n",
+        "# fit the model\n",
+        "final_result = final_logit.fit()\n",
+        "final_result.summary()"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "TNA1zYXmckfi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "features_list = list(final_result.params.index)\n",
+        "print(features_list)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NYcFwW-HLdqu",
+        "outputId": "462e3c7b-baee-4c6a-8e9f-b4896b50e4f7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['x5_saturday', 'x81_July', 'x81_December', 'x31_japan', 'x81_October', 'x5_sunday', 'x31_asia', 'x81_February', 'x91', 'x81_May', 'x5_monday', 'x81_September', 'x81_March', 'x53', 'x81_November', 'x44', 'x81_June', 'x12', 'x5_tuesday', 'x81_August', 'x81_January', 'x62', 'x31_germany', 'x58', 'x56']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Pickling the model with all its parameters"
+      ],
+      "metadata": {
+        "id": "37xfBZINfBE8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pickle\n",
+        "\n",
+        "pickle_out = open(\"purchase_predictor_model.pkl\", \"wb\")\n",
+        "pickle.dump(final_result,  pickle_out)\n",
+        "pickle_out.close()"
+      ],
+      "metadata": {
+        "id": "ATOU-8KucijX"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Extracting Standard Scaler used during training"
+      ],
+      "metadata": {
+        "id": "pEi0r3tPdc2A"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "scaler = StandardScaler()\n",
+        "scaler.fit(train.drop(columns=['y', 'x5', 'x31', 'x81', 'x82']))\n",
+        "with open('scaler_state.pkl', 'wb') as f:\n",
+        "    pickle.dump(scaler, f)"
+      ],
+      "metadata": {
+        "id": "K4SFwLuhdrkR"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Extracting mean values used for imputation based on training dataset"
+      ],
+      "metadata": {
+        "id": "D4y_tPVzeZMn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "feature_names = imputer.get_feature_names_out()\n",
+        "mean_values = imputer.statistics_\n",
+        "\n",
+        "mean_value_dict = {}\n",
+        "for i, feature_name in enumerate(feature_names):\n",
+        "    mean_value_dict[feature_name] = mean_values[i]\n",
+        "\n",
+        "print(mean_value_dict)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XLidDktXQZz-",
+        "outputId": "dd8b0629-6f88-42ae-ac45-1f83f59c5065"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'x0': 0.0007922299312466642, 'x1': -0.010064548905389839, 'x2': 4.999646757471706, 'x3': 0.0014183112117647056, 'x4': 0.00493924244037792, 'x6': 0.5003635761284421, 'x7': 50.040868942782254, 'x8': 2.5090604837087884, 'x9': 0.4980377457675753, 'x10': 14.496882308292083, 'x11': -1.0006256350908453, 'x12': 20.485288437500007, 'x13': 0.49931272290560663, 'x14': 24.9398482946953, 'x15': 0.5210424211642932, 'x16': 0.4987216650883736, 'x17': 14.501747874895907, 'x18': -20.00228714300673, 'x19': 0.4981497099401274, 'x20': 0.12483375683986937, 'x21': -0.0351584541427661, 'x22': 0.5015713130418453, 'x23': 3.5001714889814064, 'x24': -99.92643962489804, 'x25': 0.751218321899231, 'x26': 2.5095933911549615, 'x27': 0.49957380943721585, 'x28': 14.500520558921293, 'x29': -1.0094468859452896, 'x30': 5.002588551310958, 'x32': 0.4994553959364721, 'x33': 2.500642638110318, 'x34': -1.6017369665352603, 'x35': 0.9484898673617035, 'x36': -0.5004856514605459, 'x37': 3.50071827544056, 'x38': -1.5019783916060934, 'x39': -1.0035722792325292, 'x40': 1.5433514600949305, 'x41': 15.226668154714451, 'x42': 5.174580329557157, 'x43': 8.605833199524714, 'x44': 0.500565465355232, 'x45': -0.0008256095356713305, 'x46': -0.0024370126450157896, 'x47': 0.0028956390971040784, 'x48': -0.0018872161394163816, 'x49': -0.0024559810783735822, 'x50': -0.002468463768596909, 'x51': 0.0028721590645446257, 'x52': -0.0077662632036243195, 'x53': 0.4001179401671459, 'x54': 0.0018513456549217881, 'x55': -0.0038133754725072273, 'x56': -0.010878592103002781, 'x57': -0.0010737375459328473, 'x58': 0.0023894703053867323, 'x59': -0.013287680850052932, 'x60': -0.010095663815978205, 'x61': 0.011736232237679608, 'x62': 0.007200151135832802, 'x63': 50.1826640625, 'x64': 24.992023689824414, 'x65': 0.48576364406516603, 'x66': 0.5003789396007972, 'x67': 14.501546596848163, 'x68': -19.999249546140327, 'x69': 0.4992183219896094, 'x70': 0.1251490887278425, 'x71': -0.02004412461979684, 'x72': 0.5002657526723805, 'x73': 3.501052943475395, 'x74': -100.03505261121072, 'x75': 0.7511468267152464, 'x76': 2.4919420713749405, 'x77': 0.4983523932661214, 'x78': 14.498751482690583, 'x79': -1.0054875405129267, 'x80': 5.0041839952287415, 'x83': 0.004507968507189038, 'x84': -0.007803335512879892, 'x85': 0.0010585534997605286, 'x86': 0.007280224164647924, 'x87': -0.0057863230876046366, 'x88': 0.003549837182498035, 'x89': 9.463290509244072e-05, 'x90': 0.00212883666257074, 'x91': 0.25296330472992057, 'x92': 0.5005006330079965, 'x93': 3.5001735021158855, 'x94': -100.10644324921512, 'x95': 0.7458909972561035, 'x96': 1.4993093037440466, 'x97': 0.5027490545341635, 'x98': -32.499037852604985, 'x99': -0.48985086248299764}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import json\n",
+        "\n",
+        "with open('trained_imputer_values.json', 'w') as outfile:\n",
+        "    json.dump(mean_value_dict, outfile)\n",
+        "\n",
+        "print(\"mean_value_dict exported to trained_imputer_values.json\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-kdlkA2nbHLE",
+        "outputId": "da333273-6a05-42b6-ce1a-519f1ef35904"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "mean_value_dict exported to trained_imputer_values.json\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Unwrapping model"
+      ],
+      "metadata": {
+        "id": "UAt-wlLlemmI"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "test_record=pd.read_csv(\"/exercise_26_test.csv\")"
+      ],
+      "metadata": {
+        "id": "2-FOkyJoOD5T"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "with open(\"/purchase_predictor_model.pkl\", 'rb') as pickled_model:\n",
+        "    purchase_predictor = pickle.load(pickled_model)\n",
+        "\n",
+        "with open('/trained_imputer_values.json', 'r') as imputer_values:\n",
+        "    mean_values = json.load(imputer_values)\n",
+        "\n",
+        "with open('/scaler_state.pkl', 'rb') as f:\n",
+        "    scaler_state = pickle.load(f)"
+      ],
+      "metadata": {
+        "id": "JsCVCowptBhh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Data Prep for Testing"
+      ],
+      "metadata": {
+        "id": "vqrRmCMYg77f"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from sklearn.preprocessing import StandardScaler\n",
+        "import numpy as np\n",
+        "\n",
+        "def preprocess_data(test_record, final_features_list, mean_values):\n",
+        "    \"\"\"\n",
+        "    Predicts on test data with flexible handling of single and multiple records.\n",
+        "\n",
+        "    Args:\n",
+        "        test_data_path (str): Path to the test data CSV file.\n",
+        "        variables (list): List of feature names used for prediction.\n",
+        "        mean_values: Imputer object values from training data.\n",
+        "        std_scaler: StandardScaler object for scaling featu res.\n",
+        "\n",
+        "    Returns:\n",
+        "        pd.DataFrame: DataFrame containing predicted probabilities for each test record.\n",
+        "    \"\"\"\n",
+        "\n",
+        "    std_scaler = StandardScaler(**scaler_state.get_params())\n",
+        "    try:\n",
+        "        test_record['x12'] = pd.to_numeric(test_record['x12'].str.replace('$', '').str.replace(',', ''), errors='coerce')\n",
+        "    except:\n",
+        "        test_record['x12'] = test_record['x12']\n",
+        "\n",
+        "    try:\n",
+        "        test_record['x63'] = pd.to_numeric(test_record['x63'].str.replace('%', ''), errors='coerce')\n",
+        "    except:\n",
+        "        test_record['x63'] = test_record['x63']\n",
+        "\n",
+        "\n",
+        "    test_imputed = test_record.drop(columns=['x5', 'x31', 'x81', 'x82']).copy()\n",
+        "    # Created a copy to avoid modifying original DataFrame\n",
+        "\n",
+        "    for col, mean_value in mean_values.items():\n",
+        "        test_imputed[col].fillna(mean_value, inplace=True)\n",
+        "    print(\"IMPUTED \\n\", test_imputed)\n",
+        "\n",
+        "    test_imputed_std = pd.DataFrame(std_scaler.fit_transform(test_imputed), columns=test_imputed.columns)\n",
+        "    print(\"STANDARD \\n\", test_imputed_std)\n",
+        "    dumb5 = pd.get_dummies(test_record['x5'], drop_first=False, prefix='x5', prefix_sep='_', dummy_na=True)\n",
+        "    test_imputed_std = pd.concat([test_imputed_std, dumb5], axis=1, sort=False)\n",
+        "\n",
+        "    dumb31 = pd.get_dummies(test_record['x31'], drop_first=False, prefix='x31', prefix_sep='_', dummy_na=True)\n",
+        "    test_imputed_std = pd.concat([test_imputed_std, dumb31], axis=1, sort=False)\n",
+        "\n",
+        "    dumb81 = pd.get_dummies(test_record['x81'], drop_first=False, prefix='x81', prefix_sep='_', dummy_na=True)\n",
+        "    test_imputed_std = pd.concat([test_imputed_std, dumb81], axis=1, sort=False)\n",
+        "\n",
+        "    dumb82 = pd.get_dummies(test_record['x82'], drop_first=False, prefix='x82', prefix_sep='_', dummy_na=True)\n",
+        "    test_imputed_std = pd.concat([test_imputed_std, dumb82], axis=1, sort=False)\n",
+        "\n",
+        "    missing_cols = [col for col in final_features_list if col not in test_imputed_std.columns]\n",
+        "    # needed for single record entries. Variables has no Wednesday or Thursday in x5  for example\n",
+        "    # so in case the test data has Wednesday, it will not align with the columns expected by the model\n",
+        "    # In order to avoid conflicts, we'll initialize the columns (like x5_saturday) as 0.0\n",
+        "\n",
+        "    if missing_cols:\n",
+        "        print(\"initializing missing columns, for single record input\")\n",
+        "        for col in missing_cols:\n",
+        "            test_imputed_std[col] = 0.0\n",
+        "\n",
+        "    return test_imputed_std\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "2xseiXHGyYpz"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# # for single record input (For best practice / avoiding warning)\n",
+        "# first_row = test_record.iloc[0]\n",
+        "# test_record = first_row.to_frame().T\n",
+        "\n",
+        "test_record = test_record[:1]\n",
+        "final_features_list = list(unpickled_model.params.index)\n",
+        "# predictions_single = get_predictions_results(test_record, variables, final_result, imputer, std_scaler)\n",
+        "preprocessed_input = preprocess_data(test_record, final_features_list, mean_value_dict)\n",
+        "Outcomes_test_record_final = pd.DataFrame(unpickled_model.predict(preprocessed_input[final_features_list])).rename(columns={0:'probs'})\n",
+        "\n",
+        "# # print(predictions_single)\n",
+        "print(Outcomes_test_record_final)"
+      ],
+      "metadata": {
+        "id": "xdquJokc6eq6",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "8053ca0d-3d42-4617-b340-887bc789ea5b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "IMPUTED \n",
+            "          x0        x1        x2        x3        x4        x6         x7  \\\n",
+            "0  0.042317 -3.344721  4.635124 -0.598396 -0.647772  0.184902  46.690015   \n",
+            "\n",
+            "         x8        x9        x10  ...       x90       x91       x92       x93  \\\n",
+            "0  3.034132  0.364704  14.260733  ... -0.493304  0.373853  0.941435  3.546798   \n",
+            "\n",
+            "         x94       x95       x96       x97        x98        x99  \n",
+            "0 -99.857488  0.403926  1.653787  0.007715 -32.021646 -60.312783  \n",
+            "\n",
+            "[1 rows x 96 columns]\n",
+            "STANDARD \n",
+            "     x0   x1   x2   x3   x4   x6   x7   x8   x9  x10  ...  x90  x91  x92  x93  \\\n",
+            "0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  0.0  ...  0.0  0.0  0.0  0.0   \n",
+            "\n",
+            "   x94  x95  x96  x97  x98  x99  \n",
+            "0  0.0  0.0  0.0  0.0  0.0  0.0  \n",
+            "\n",
+            "[1 rows x 96 columns]\n",
+            "initializing missing columns, for single record input\n",
+            "      probs\n",
+            "0  0.518769\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "<ipython-input-19-ba3a3ec3c136>:22: SettingWithCopyWarning: \n",
+            "A value is trying to be set on a copy of a slice from a DataFrame.\n",
+            "Try using .loc[row_indexer,col_indexer] = value instead\n",
+            "\n",
+            "See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
+            "  test_record['x12'] = test_record['x12']\n",
+            "<ipython-input-19-ba3a3ec3c136>:27: SettingWithCopyWarning: \n",
+            "A value is trying to be set on a copy of a slice from a DataFrame.\n",
+            "Try using .loc[row_indexer,col_indexer] = value instead\n",
+            "\n",
+            "See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
+            "  test_record['x63'] = test_record['x63']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Assuming we have pre-trained model, imputer, and scaler\n",
+        "# # for single record input\n",
+        "# first_row = test_record.iloc[0]\n",
+        "# test_record = first_row.to_frame().T\n",
+        "\n",
+        "# train_copy = train.copy()\n",
+        "final_features_list = list(unpickled_model.params.index)\n",
+        "# predictions_single = get_predictions_results(test_record, variables, final_result, imputer, std_scaler)\n",
+        "preprocessed_input = preprocess_data(test_record, final_features_list, mean_value_dict)\n",
+        "Outcomes_test_record_final = pd.DataFrame(unpickled_model.predict(preprocessed_input[final_features_list])).rename(columns={0:'probs'})\n",
+        "\n",
+        "# # print(predictions_single)\n",
+        "print(Outcomes_test_record_final)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "e67ef7c8-c48e-4c78-cba6-18b824897f83",
+        "id": "p2q0HFNMiDVp"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "IMPUTED \n",
+            "             x0        x1        x2        x3        x4        x6         x7  \\\n",
+            "0     0.042317 -3.344721  4.635124 -0.598396 -0.647772  0.184902  46.690015   \n",
+            "1    -1.033160 -0.340140  5.871823  0.001418  0.122133  0.997773  51.581411   \n",
+            "2     2.029367 -3.239301  4.724436  2.211831  0.551611  0.492405  87.179042   \n",
+            "3    -0.065676  1.892277  4.818741  0.640313  1.944562  0.208718  73.573314   \n",
+            "4    -0.357126 -1.852161  5.367849 -0.069869 -0.641455  0.940286  72.773335   \n",
+            "...        ...       ...       ...       ...       ...       ...        ...   \n",
+            "9995 -0.261591  1.436751  5.609435 -0.214122 -0.036072  0.538101  94.051371   \n",
+            "9996 -2.006043 -3.135000  4.680411 -1.722245 -0.955550  0.091303  76.540749   \n",
+            "9997  0.726709  0.960993  6.504909  1.263968  1.135526  0.901729  73.040847   \n",
+            "9998 -0.717903  0.716265  5.178784 -0.504802  0.011045  0.662930   9.958968   \n",
+            "9999  0.733136 -4.931013  6.428262 -0.467062 -0.165931  0.930110  85.459085   \n",
+            "\n",
+            "            x8        x9        x10  ...       x90       x91       x92  \\\n",
+            "0     3.034132  0.364704  14.260733  ... -0.493304  0.373853  0.941435   \n",
+            "1     1.709219  0.844079  14.105233  ...  0.521119  0.148424  0.925301   \n",
+            "2     4.333755  0.513789  14.317604  ...  0.154492 -0.034504  0.904042   \n",
+            "3     4.929132  0.116004  14.685447  ...  0.305243 -0.099213  0.712234   \n",
+            "4     2.509060  0.191044  14.387494  ...  0.617258  0.307445  0.376738   \n",
+            "...        ...       ...        ...  ...       ...       ...       ...   \n",
+            "9995  0.128483  0.831800  14.262964  ...  0.629069  0.465482  0.096421   \n",
+            "9996  2.509060  0.788643  14.932553  ...  1.887403  0.438610  0.843943   \n",
+            "9997  3.763917  0.428526  14.122330  ... -0.892807  0.373674  0.533687   \n",
+            "9998  0.651211  0.321436  14.976802  ... -0.248373  0.340834  0.428005   \n",
+            "9999  1.642134  0.886156  14.483752  ...  0.484117  0.422583  0.440653   \n",
+            "\n",
+            "           x93         x94       x95       x96       x97        x98  \\\n",
+            "0     3.546798  -99.857488  0.403926  1.653787  0.007715 -32.021646   \n",
+            "1     3.830426 -101.105748  0.055775  0.564890  0.051716 -32.540612   \n",
+            "2     3.642968 -107.476487  1.046718  1.494123  0.231084 -32.740954   \n",
+            "3     3.853489  -91.650053  0.499861  2.804358  0.627921 -32.190043   \n",
+            "4     3.306958  -99.557140  1.275527  1.476482  0.122798 -32.957087   \n",
+            "...        ...         ...       ...       ...       ...        ...   \n",
+            "9995  3.577037  -98.673736  0.465537  0.723919  0.966914 -32.278775   \n",
+            "9996  3.486823 -106.188958  0.838675  1.361103  0.777474 -32.308340   \n",
+            "9997  3.926538  -87.777630  0.019378  1.323227  0.946826 -32.745950   \n",
+            "9998  3.352950 -107.147221  0.231888  1.647653  0.935385 -32.986826   \n",
+            "9999  3.304966 -105.873694  0.001141  2.347314  0.493101 -32.370607   \n",
+            "\n",
+            "             x99  \n",
+            "0     -60.312783  \n",
+            "1    -266.725795  \n",
+            "2      -4.327887  \n",
+            "3     103.192597  \n",
+            "4    -111.509168  \n",
+            "...          ...  \n",
+            "9995   -0.225136  \n",
+            "9996  102.043779  \n",
+            "9997  102.891836  \n",
+            "9998  -70.842760  \n",
+            "9999   -5.050171  \n",
+            "\n",
+            "[10000 rows x 96 columns]\n",
+            "STANDARDIZED \n",
+            "             x0        x1        x2        x3        x4        x6        x7  \\\n",
+            "0     0.032956 -1.121376 -0.368383 -0.619999 -0.660500 -1.096950 -0.109765   \n",
+            "1    -1.054878 -0.111424  0.862965 -0.003996  0.124211  1.711861  0.061823   \n",
+            "2     2.042838 -1.085941 -0.279457  2.266074  0.561948 -0.034398  1.310571   \n",
+            "3    -0.076278  0.638975 -0.185561  0.652142  1.981686 -1.014656  0.833288   \n",
+            "4    -0.371077 -0.619671  0.361171 -0.077207 -0.654062  1.513220  0.805226   \n",
+            "...        ...       ...       ...       ...       ...       ...       ...   \n",
+            "9995 -0.274444  0.485856  0.601713 -0.225353 -0.037037  0.123501  1.551649   \n",
+            "9996 -2.038940 -1.050881 -0.323292 -1.774179 -0.974198 -1.420374  0.937385   \n",
+            "9997  0.725212  0.325936  1.493312  1.292629  1.157092  1.379989  0.814610   \n",
+            "9998 -0.735999  0.243674  0.172924 -0.523878  0.010986  0.554838 -1.398273   \n",
+            "9999  0.731713 -1.654588  1.416997 -0.485120 -0.169394  1.478057  1.250236   \n",
+            "\n",
+            "            x8        x9       x10  ...       x90       x91       x92  \\\n",
+            "0     0.382829 -0.473777 -0.842737  ... -0.491069  0.449440  1.545863   \n",
+            "1    -0.547370  1.202168 -1.389145  ...  0.516104 -0.335402  1.489614   \n",
+            "2     1.295272  0.047440 -0.642899  ...  0.152097 -0.972274  1.415500   \n",
+            "3     1.713276 -1.343258  0.649657  ...  0.301771 -1.197562  0.746790   \n",
+            "4     0.014185 -1.080910 -0.397314  ...  0.611556  0.218238 -0.422860   \n",
+            "...        ...       ...       ...  ...       ...       ...       ...   \n",
+            "9995 -1.657177  1.159240 -0.834897  ...  0.623282  0.768451 -1.400141   \n",
+            "9996  0.014185  1.008358  1.517957  ...  1.872623  0.674895  1.205972   \n",
+            "9997  0.895199 -0.250648 -1.329068  ... -0.887716  0.448817  0.124318   \n",
+            "9998 -1.290179 -0.625046  1.673443  ... -0.247888  0.334483 -0.244126   \n",
+            "9999 -0.594469  1.349274 -0.059075  ...  0.479367  0.619096 -0.200031   \n",
+            "\n",
+            "           x93       x94       x95       x96       x97       x98       x99  \n",
+            "0     0.162271  0.017142 -0.797114  0.170211 -1.756137  1.697999 -0.599060  \n",
+            "1     1.159589 -0.107814 -1.607767 -1.106067 -1.600669 -0.124933 -2.689336  \n",
+            "2     0.500432 -0.745547  0.699598 -0.016929 -0.966912 -0.828660 -0.032119  \n",
+            "3     1.240686  0.838735 -0.573733  1.518775  0.435220  1.106483  1.056705  \n",
+            "4    -0.681079  0.047208  1.232368 -0.037605 -1.349516 -1.587854 -1.117508  \n",
+            "...        ...       ...       ...       ...       ...       ...       ...  \n",
+            "9995  0.268598  0.135640 -0.653656 -0.919671  1.632972  0.794802  0.009428  \n",
+            "9996 -0.048621 -0.616661  0.215178 -0.172839  0.963629  0.690951  1.045072  \n",
+            "9997  1.497548  1.226378 -1.692517 -0.217233  1.561997 -0.846208  1.053660  \n",
+            "9998 -0.519359 -0.712586 -1.197697  0.163022  1.521572 -1.692314 -0.705693  \n",
+            "9999 -0.688084 -0.585102 -1.734980  0.983081 -0.041135  0.472231 -0.039433  \n",
+            "\n",
+            "[10000 rows x 96 columns]\n",
+            "         probs\n",
+            "0     0.367921\n",
+            "1     0.824529\n",
+            "2     0.134798\n",
+            "3     0.472323\n",
+            "4     0.323107\n",
+            "...        ...\n",
+            "9995  0.631410\n",
+            "9996  0.438731\n",
+            "9997  0.658989\n",
+            "9998  0.161549\n",
+            "9999  0.744954\n",
+            "\n",
+            "[10000 rows x 1 columns]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
