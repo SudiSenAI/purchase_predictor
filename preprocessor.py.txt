@@ -1,0 +1,99 @@
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import logging
+
+
+class Preprocessor:
+    """
+    Class for preprocessing data for machine learning models.
+    """
+
+    def __init__(self):
+       self.logger = logging.getLogger('preprocessor')
+
+    def preprocess_data(self, test_record, final_features_list, mean_values, scaler_state):
+        """
+        Predicts on test data with flexible handling of single and multiple records.
+
+        Args:
+            test_record: Input dataframe with all columns.
+            final_features_list: Selected features from final model.
+            mean_values: Imputer object values from training data.
+            scaler_state: StandardScaler frozen on training data
+        
+        Returns:
+            test_imputed_std: dataframe with scaled and null-imputed features
+        """        
+        std_scaler = StandardScaler(**scaler_state.get_params())
+        try:
+            test_record['x12'] = test_record['x12'].str.replace('$','')
+            test_record['x12'] = test_record['x12'].str.replace(',','')
+            test_record['x12'] = test_record['x12'].str.replace(')','')
+            test_record['x12'] = test_record['x12'].str.replace('(','-')
+            test_record['x12'] = test_record['x12'].astype(float)
+            # test_record['x12'] = pd.to_numeric(test_record['x12'].str.replace('$', '').str.replace(',', ''), errors='coerce')
+            self.logger.info("Successfully converted 'x12' to float")
+        except Exception as e:
+            raise ValueError("Unable to convert x12 to float")
+
+        try:
+            test_record['x63'] = test_record['x63'].str.replace('%','')
+            test_record['x63'] = test_record['x63'].astype(float)
+            # test_record['x63'] = pd.to_numeric(test_record['x63'].str.replace('%', ''), errors='coerce')
+            self.logger.info("Successfully converted 'x63' to float")
+        except Exception as e:
+            raise ValueError("Unable to convert 'x63' to float")
+
+        test_imputed = test_record.drop(columns=['x5', 'x31', 'x81', 'x82']).copy()  # Create a copy to avoid modifying original DataFrame
+
+        for col, mean_value in mean_values.items():
+            test_imputed[col].fillna(mean_value, inplace=True)  # Replace NaN
+            test_imputed.loc[test_imputed[col] == '', col] = mean_value  # Replace empty strings
+        
+        test_imputed_std = pd.DataFrame(std_scaler.fit_transform(test_imputed), columns=test_imputed.columns)
+        self.logger.info("Null values imputed, and standardized according to test data")
+        
+        dumb5 = pd.get_dummies(test_record['x5'], drop_first=False, prefix='x5', prefix_sep='_', dummy_na=True)
+        test_imputed_std = pd.concat([test_imputed_std, dumb5], axis=1, sort=False)
+
+        dumb31 = pd.get_dummies(test_record['x31'], drop_first=False, prefix='x31', prefix_sep='_', dummy_na=True)
+        test_imputed_std = pd.concat([test_imputed_std, dumb31], axis=1, sort=False)
+
+        dumb81 = pd.get_dummies(test_record['x81'], drop_first=False, prefix='x81', prefix_sep='_', dummy_na=True)
+        test_imputed_std = pd.concat([test_imputed_std, dumb81], axis=1, sort=False)
+
+        dumb82 = pd.get_dummies(test_record['x82'], drop_first=False, prefix='x82', prefix_sep='_', dummy_na=True)
+        test_imputed_std = pd.concat([test_imputed_std, dumb82], axis=1, sort=False)
+        self.logger.info("Dummies created")
+
+       # Initialize missing columns with zeros (for model compatibility)
+        missing_cols = [col for col in final_features_list if col not in test_imputed_std.columns]
+        if missing_cols:
+            self.logger.info("Initializing missing columns")
+            for col in missing_cols:
+                test_imputed_std[col] = 0.0
+
+        return test_imputed_std
+    
+    def json_to_dataframe(self, json_data):
+        """Converts JSON input to a pandas DataFrame efficiently.
+
+        Args:
+            json_data: The JSON data as either a dictionary or a list of dictionaries.
+
+        Returns:
+            pd.DataFrame: The created DataFrame.
+        """
+
+        if isinstance(json_data, dict):
+            # Convert single dictionary to DataFrame
+            return pd.DataFrame.from_dict([json_data])
+        elif isinstance(json_data, list):
+            # Check if all elements in the list are dictionaries
+            if not all(isinstance(item, dict) for item in json_data):
+                raise ValueError("All elements in the list must be dictionaries")
+            
+            # Convert list of dictionaries to DataFrame
+            return pd.DataFrame(json_data)
+        else:
+            raise ValueError("Invalid JSON input type. Expected either a dictionary or a list of dictionaries.")
